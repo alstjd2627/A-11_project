@@ -1,4 +1,11 @@
-
+/*
+1. main_page에서 멤버 카드를 눌렀을 경우 a 함수가 멤버이름을 매개변수로 가지고 실행 되어야함
+2. a 함수(privatepage에 정의)가 실행되면 멤버이름을 이용해 데이터 베이스에서 정보를 가지고 privatepage.html로 넘어감
+3. 정보 화면에 출력.  
+해야할 것 */
+export function get_membername(name){
+  console.log(name);
+}
 // Firebase SDK 라이브러리 가져오기
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
@@ -28,9 +35,6 @@ const firebaseConfig = {
 // Firebase 인스턴스 초기화
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-// 팀원 이름 테스트 변수 설정
-let test_name = "김민성";
 
 //등록 시간 순서대로 정렬 후 화면에 출력
 async function guest_book_upload() {
@@ -63,6 +67,7 @@ async function guest_book_upload() {
 }
 
 guest_book_upload();
+let test_name = "김민성";
 
 // 입력받은 방명록을 데이터 베이스에 저장
 $("#resister_btn").click(async function () {
